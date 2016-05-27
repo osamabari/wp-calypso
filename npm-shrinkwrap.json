@@ -18,7 +18,7 @@
       "version": "3.0.0",
       "dependencies": {
         "acorn": {
-          "version": "3.1.0"
+          "version": "3.2.0"
         }
       }
     },
@@ -454,7 +454,7 @@
       }
     },
     "chokidar": {
-      "version": "1.5.1"
+      "version": "1.5.2"
     },
     "chrono-node": {
       "version": "1.2.3"
@@ -792,6 +792,9 @@
     },
     "doctypes": {
       "version": "1.0.0"
+    },
+    "dom-helpers": {
+      "version": "2.4.0"
     },
     "dom-scroll-into-view": {
       "version": "1.0.1"
@@ -2611,6 +2614,9 @@
     "react-addons-linked-state-mixin": {
       "version": "0.14.3"
     },
+    "react-addons-shallow-compare": {
+      "version": "0.14.3"
+    },
     "react-addons-test-utils": {
       "version": "0.14.3"
     },
@@ -2670,6 +2676,20 @@
         },
         "fbjs": {
           "version": "0.2.1"
+        }
+      }
+    },
+    "react-virtualized": {
+      "version": "7.2.0",
+      "dependencies": {
+        "classnames": {
+          "version": "2.2.5"
+        },
+        "performance-now": {
+          "version": "0.2.0"
+        },
+        "raf": {
+          "version": "3.2.0"
         }
       }
     },
@@ -3476,7 +3496,7 @@
       "version": "5.1.1",
       "dependencies": {
         "acorn": {
-          "version": "3.1.0"
+          "version": "3.2.0"
         }
       }
     },
@@ -3528,7 +3548,7 @@
       "version": "0.3.0",
       "dependencies": {
         "acorn": {
-          "version": "3.1.0"
+          "version": "3.2.0"
         },
         "lodash": {
           "version": "2.4.2"

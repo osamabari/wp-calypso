@@ -70,7 +70,10 @@ export function render( element, key = JSON.stringify( element ) ) {
 export function serverRender( req, res ) {
 	const context = req.context;
 
-	if ( config.isEnabled( 'server-side-rendering' ) && context.store && context.layout ) {
+	if ( config.isEnabled( 'server-side-rendering' ) &&
+		context.store &&
+		context.layout &&
+		! context.user ) {
 		context.initialReduxState = pick( context.store.getState(), 'ui', 'themes' );
 		const key = JSON.stringify( context.layout ) + req.path + JSON.stringify( context.initialReduxState );
 		Object.assign( context, render( context.layout, key ) );

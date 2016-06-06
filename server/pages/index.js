@@ -340,23 +340,7 @@ module.exports = function() {
 		res.redirect( redirectUrl );
 	} );
 
-	app.get( '/calypso/?*', render404 );
-
-	if ( config.isEnabled( 'jetpack/connect' ) ) {
-		app.get( '/jetpack/connect/:locale?', setUpRoute, serverRender );
-		app.get( '/jetpack/connect/authorize/:locale?', setUpRoute, serverRender );
-	}
-
 	app.get( '/start/:flowName?/:stepName?/:stepSectionName?/:lang?', setUpRoute, serverRender );
-
-	app.get( '/accept-invite/:site_id?/:invitation_key?/:activation_key?/:auth_key?/:locale?',
-		setUpRoute,
-		serverRender
-	);
-
-	if ( config.isEnabled( 'mailing-lists/unsubscribe' ) ) {
-		app.get( '/mailing-lists/unsubscribe', setUpRoute, serverRender );
-	}
 
 	if ( config( 'env' ) !== 'development' ) {
 		app.get( '/discover', function( req, res, next ) {
@@ -383,7 +367,11 @@ module.exports = function() {
 				} );
 
 				if ( ! section.isomorphic ) {
-					app.get( pathRegex, setUpLoggedInRoute, serverRender );
+					if ( section.enableLoggedOut ) {
+						app.get( pathRegex, setUpRoute, serverRender );
+					} else {
+						app.get( pathRegex, setUpLoggedInRoute, serverRender );
+					}
 				}
 			} );
 

@@ -11,7 +11,7 @@ import PlanHeader from '../header';
 
 export default React.createClass( {
 
-	displayName: 'Plan',
+	displayName: 'PlanFeatures',
 
 	mixins: [ PureRenderMixin ],
 
@@ -24,7 +24,7 @@ export default React.createClass( {
 		return (
 			<div className="design-assets__group">
 				<h2>
-					<a href="/devdocs/app-components/plan">Plan</a>
+					<a href="/devdocs/app-components/plan-features">Plan Features</a>
 				</h2>
 				<div>
 					<PlanHeader
@@ -40,4 +40,3 @@ export default React.createClass( {
 		);
 	}
 } );
-

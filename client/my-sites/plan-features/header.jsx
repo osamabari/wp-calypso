@@ -7,7 +7,7 @@ import classNames from 'classnames';
 /**
  * Internal Dependencies
  **/
-import localize from 'lib/mixins/i18n/localize';
+import { localize } from 'i18n-calypso';
 import Gridicon from 'components/gridicon';
 
 class PlanHeader extends Component {
@@ -64,4 +64,3 @@ PlanHeader.defaultProps = {
 };
 
 export default localize( PlanHeader );
-

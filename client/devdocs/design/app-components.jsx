@@ -28,7 +28,7 @@ import PlanCompareCard from 'my-sites/plan-compare-card/docs/example';
 import FeatureComparison from 'my-sites/feature-comparison/docs/example';
 import DomainTip from 'my-sites/domain-tip/docs/example';
 import PostCard from 'components/post-card/docs/example';
-import Plan from 'my-sites/plan-features/plan/docs/example';
+import PlanFeatures from 'my-sites/plan-features/docs/example';
 
 export default React.createClass( {
 
@@ -78,7 +78,7 @@ export default React.createClass( {
 					<FeatureComparison />
 					<DomainTip />
 					<PostCard />
-					<Plan />
+					<PlanFeatures />
 				</Collection>
 			</div>
 		);

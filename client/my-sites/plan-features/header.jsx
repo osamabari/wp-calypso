@@ -10,12 +10,19 @@ import noop from 'lodash/noop';
  **/
 import { localize } from 'i18n-calypso';
 import Gridicon from 'components/gridicon';
+import {
+	plansList,
+	PLAN_FREE,
+	PLAN_PREMIUM,
+	PLAN_BUSINESS
+} from 'lib/plans/constants';
 
 class PlanFeaturesHeader extends Component {
 
 	render() {
 		const { billingTimeFrame, current, planType, popular, price, title, translate } = this.props;
-		const figureClasses = classNames( 'plan-features__header-figure', `is-${ planType }` );
+		const planName = plansList[ planType ].getTitle().toLowerCase();
+		const figureClasses = classNames( 'plan-features__header-figure', `is-${ planName }` );
 		return (
 			<header className="plan-features__header">
 				{
@@ -47,13 +54,12 @@ class PlanFeaturesHeader extends Component {
 			</header>
 		);
 	}
-
 }
 
 PlanFeaturesHeader.propTypes = {
 	onClick: PropTypes.func,
 	title: PropTypes.string.isRequired,
-	planType: React.PropTypes.oneOf( [ 'free', 'premium', 'business' ] ).isRequired,
+	planType: React.PropTypes.oneOf( [ PLAN_FREE, PLAN_PREMIUM, PLAN_BUSINESS ] ).isRequired,
 	price: PropTypes.object.isRequired,
 	billingTimeFrame: PropTypes.string.isRequired,
 	current: PropTypes.bool,

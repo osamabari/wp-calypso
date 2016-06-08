@@ -8,6 +8,7 @@ import PureRenderMixin from 'react-pure-render/mixin';
  * Internal dependencies
  */
 import PlanFeaturesHeader from '../header';
+import { plansList, PLAN_PREMIUM } from 'lib/plans/constants';
 
 export default React.createClass( {
 
@@ -30,8 +31,8 @@ export default React.createClass( {
 					<PlanFeaturesHeader
 						popular
 						current
-						title={ 'Premium' }
-						planType={ 'premium' }
+						title={ plansList[ PLAN_PREMIUM ].getTitle() }
+						planType={ PLAN_PREMIUM }
 						price={ price }
 						billingTimeFrame={ 'per month, billed yearly' }
 					/>

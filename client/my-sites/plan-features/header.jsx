@@ -3,6 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
+import noop from 'lodash/noop';
 
 /**
  * Internal Dependencies
@@ -14,32 +15,32 @@ class PlanFeaturesHeader extends Component {
 
 	render() {
 		const { billingTimeFrame, current, planType, popular, price, title, translate } = this.props;
-		const figureClasses = classNames( 'plan-features-header__figure', `is-${ planType }` );
+		const figureClasses = classNames( 'plan-features__header-figure', `is-${ planType }` );
 		return (
-			<header className="plan-features-header">
+			<header className="plan-features__header">
 				{
 					popular &&
-						<div className="plan-features-header__banner">
+						<div className="plan-features__header-banner">
 							{ translate( 'Our most popular plan' ) }
 						</div>
 				}
 				<div className={ figureClasses }>
-					{ current && <Gridicon icon="checkmark-circle" className="plan-features-header__checkmark" /> }
+					{ current && <Gridicon icon="checkmark-circle" className="plan-features__header-checkmark" /> }
 				</div>
-				<div className="plan-features-header__text">
-					<h4 className="plan-features-header__title">{ title }</h4>
-					<h4 className="plan-features-header__price">
-						<sup className="plan-features-header__currency-symbol">
+				<div className="plan-features__header-text">
+					<h4 className="plan-features__header-title">{ title }</h4>
+					<h4 className="plan-features__header-price">
+						<sup className="plan-features__header-currency-symbol">
 							{ price.currencySymbol }
 						</sup>
-						<span className="plan-features-header__dollars">
+						<span className="plan-features__header-dollars">
 							{ price.dollars }
 						</span>
-						<sup className="plan-features-header__cents">
+						<sup className="plan-features__header-cents">
 							{ `.${ price.cents }` }
 						</sup>
 					</h4>
-					<p className="plan-features-header__timeframe">
+					<p className="plan-features__header-timeframe">
 						{ billingTimeFrame }
 					</p>
 				</div>
@@ -50,15 +51,17 @@ class PlanFeaturesHeader extends Component {
 }
 
 PlanFeaturesHeader.propTypes = {
-	title: PropTypes.string,
-	planType: React.PropTypes.oneOf( [ 'free', 'premium', 'business' ] ),
-	price: PropTypes.object,
-	billingTimeFrame: PropTypes.string,
+	onClick: PropTypes.func,
+	title: PropTypes.string.isRequired,
+	planType: React.PropTypes.oneOf( [ 'free', 'premium', 'business' ] ).isRequired,
+	price: PropTypes.object.isRequired,
+	billingTimeFrame: PropTypes.string.isRequired,
 	current: PropTypes.bool,
 	popular: PropTypes.bool
 };
 
 PlanFeaturesHeader.defaultProps = {
+	onClick: noop,
 	current: false,
 	popular: false
 };

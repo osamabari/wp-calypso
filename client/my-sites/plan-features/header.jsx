@@ -24,7 +24,7 @@ class PlanFeaturesHeader extends Component {
 		const planName = plansList[ planType ].getTitle().toLowerCase();
 		const figureClasses = classNames( 'plan-features__header-figure', `is-${ planName }` );
 		return (
-			<header className="plan-features__header">
+			<header className="plan-features__header" onClick={ this.props.onClick } >
 				{
 					popular &&
 						<div className="plan-features__header-banner">
@@ -44,7 +44,7 @@ class PlanFeaturesHeader extends Component {
 							{ price.dollars }
 						</span>
 						<sup className="plan-features__header-cents">
-							{ `.${ price.cents }` }
+							{ `${ price.decimalMark }${ price.cents }` }
 						</sup>
 					</h4>
 					<p className="plan-features__header-timeframe">
@@ -57,18 +57,18 @@ class PlanFeaturesHeader extends Component {
 }
 
 PlanFeaturesHeader.propTypes = {
-	onClick: PropTypes.func,
-	title: PropTypes.string.isRequired,
-	planType: React.PropTypes.oneOf( [ PLAN_FREE, PLAN_PREMIUM, PLAN_BUSINESS ] ).isRequired,
-	price: PropTypes.object.isRequired,
 	billingTimeFrame: PropTypes.string.isRequired,
 	current: PropTypes.bool,
-	popular: PropTypes.bool
+	onClick: PropTypes.func,
+	planType: React.PropTypes.oneOf( [ PLAN_FREE, PLAN_PREMIUM, PLAN_BUSINESS ] ).isRequired,
+	popular: PropTypes.bool,
+	price: PropTypes.object.isRequired,
+	title: PropTypes.string.isRequired
 };
 
 PlanFeaturesHeader.defaultProps = {
-	onClick: noop,
 	current: false,
+	onClick: noop,
 	popular: false
 };
 

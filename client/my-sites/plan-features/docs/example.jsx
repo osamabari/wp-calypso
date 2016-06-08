@@ -19,6 +19,7 @@ export default React.createClass( {
 	render() {
 		const price = {
 			currencySymbol: '$',
+			decimalMark: '.',
 			dollars: '8',
 			cents: '25'
 		};

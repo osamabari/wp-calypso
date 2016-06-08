@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import { localize } from 'i18n-calypso';
 import Gridicon from 'components/gridicon';
 
-class PlanHeader extends Component {
+class PlanFeaturesHeader extends Component {
 
 	render() {
 		const { billingTimeFrame, current, planType, popular, price, title, translate } = this.props;
@@ -49,7 +49,7 @@ class PlanHeader extends Component {
 
 }
 
-PlanHeader.propTypes = {
+PlanFeaturesHeader.propTypes = {
 	title: PropTypes.string,
 	planType: React.PropTypes.oneOf( [ 'free', 'premium', 'business' ] ),
 	price: PropTypes.object,
@@ -58,9 +58,9 @@ PlanHeader.propTypes = {
 	popular: PropTypes.bool
 };
 
-PlanHeader.defaultProps = {
+PlanFeaturesHeader.defaultProps = {
 	current: false,
 	popular: false
 };
 
-export default localize( PlanHeader );
+export default localize( PlanFeaturesHeader );

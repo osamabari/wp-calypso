@@ -7,7 +7,7 @@ import PureRenderMixin from 'react-pure-render/mixin';
 /**
  * Internal dependencies
  */
-import PlanHeader from '../header';
+import PlanFeaturesHeader from '../header';
 
 export default React.createClass( {
 
@@ -27,7 +27,7 @@ export default React.createClass( {
 					<a href="/devdocs/app-components/plan-features">Plan Features</a>
 				</h2>
 				<div>
-					<PlanHeader
+					<PlanFeaturesHeader
 						popular
 						current
 						title={ 'Premium' }

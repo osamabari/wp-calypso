@@ -20,8 +20,8 @@ export default React.createClass( {
 		const price = {
 			currencySymbol: '$',
 			decimalMark: '.',
-			dollars: '8',
-			cents: '25'
+			dollars: 8,
+			cents: 25
 		};
 		return (
 			<div className="design-assets__group">

@@ -44,7 +44,7 @@ class PlanFeaturesHeader extends Component {
 							{ price.dollars }
 						</span>
 						<sup className="plan-features__header-cents">
-							{ `${ price.decimalMark }${ price.cents }` }
+							{ price.cents && `${ price.decimalMark }${ price.cents }` }
 						</sup>
 					</h4>
 					<p className="plan-features__header-timeframe">

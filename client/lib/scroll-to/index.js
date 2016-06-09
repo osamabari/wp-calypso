@@ -1,7 +1,6 @@
 /**
  * External dependencies
  */
-import raf from 'raf';
 import TWEEN from 'tween.js';
 
 function getCurrentScroll( container ) {
@@ -34,7 +33,7 @@ function makeScrollUpdater( container ) {
 
 function animate() {
 	if ( TWEEN.getAll().length > 0 ) {
-		raf( animate );
+		window.requestAnimationFrame( animate );
 		TWEEN.update();
 	}
 }

@@ -38,6 +38,8 @@ function animate() {
 
 	if ( 'undefined' !== typeof window && window.requestAnimationFrame ) {
 		window.requestAnimationFrame( animate );
+	} else {
+		process.nextTick( animate );
 	}
 
 	TWEEN.update();

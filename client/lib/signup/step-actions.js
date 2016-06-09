@@ -23,7 +23,7 @@ function addDomainItemsToCart( callback, dependencies, { domainItem, googleAppsC
 		blog_name: siteUrl,
 		blog_title: siteUrl,
 		options: {
-			theme: dependencies.theme
+			theme: dependencies.theme || 'pub/' + themeSlug
 		},
 		validate: false,
 		find_available_url: isPurchasingItem

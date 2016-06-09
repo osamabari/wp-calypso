@@ -32,10 +32,15 @@ function makeScrollUpdater( container ) {
 }
 
 function animate() {
-	if ( TWEEN.getAll().length > 0 ) {
-		window.requestAnimationFrame( animate );
-		TWEEN.update();
+	if ( ! TWEEN.getAll().length ) {
+		return;
 	}
+
+	if ( 'undefined' !== typeof window && window.requestAnimationFrame ) {
+		window.requestAnimationFrame( animate );
+	}
+
+	TWEEN.update();
 }
 
 /**
